@@ -1,89 +1,74 @@
-
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="module" src="/index.tsx"></script>
     <title>Hot Potato Israel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
-      :root {
-        --primary: #ea580c;
-        --secondary: #4338ca;
-        --accent: #f43f5e;
-      }
-      body {
-        font-family: 'Assistant', sans-serif;
-        background-color: #0f172a;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-        color: #f8fafc;
-      }
-      /* Animated Mesh Background */
-      .bg-mesh {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background: radial-gradient(circle at 0% 0%, #1e1b4b 0%, transparent 50%),
-                    radial-gradient(circle at 100% 100%, #312e81 0%, transparent 50%),
-                    radial-gradient(circle at 50% 50%, #1e293b 0%, transparent 100%);
-        overflow: hidden;
-      }
-      .bg-orb {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(80px);
-        opacity: 0.4;
-        animation: float 20s infinite alternate ease-in-out;
-      }
-      @keyframes float {
-        0% { transform: translate(0, 0) scale(1); }
-        100% { transform: translate(100px, 50px) scale(1.5); }
-      }
-      .glass {
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-      }
-      .glass-card {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .text-glow {
-        text-shadow: 0 0 20px rgba(234, 88, 12, 0.5);
-      }
-      ::-webkit-scrollbar {
-        width: 0px;
-      }
+        :root {
+            --primary: #ef4444;
+            --secondary: #111827;
+            --accent: #f59e0b;
+        }
+
+        body {
+            font-family: 'Assistant', sans-serif;
+            background-color: #0f172a;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            color: #f8fafc;
+        }
+
+        /* Animated Mesh Background */
+        .bg-mesh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background: radial-gradient(circle at 0% 0%, #1e293b 0%, transparent 50%),
+                        radial-gradient(circle at 100% 100%, #1e1b4b 0%, transparent 50%),
+                        radial-gradient(circle at 50% 50%, #1e293b 0%, transparent 100%);
+        }
+
+        .bg-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.6;
+            animation: float 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(20px, 40px) scale(1.1); }
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
     </style>
-    <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
-    "@google/genai": "https://esm.sh/@google/genai@^1.36.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "framer-motion": "https://esm.sh/framer-motion@^11.11.11",
-    "lucide-react": "https://esm.sh/lucide-react@^0.454.0"
-  }
-}
-</script>
 </head>
-  <body>
+<body>
     <div class="bg-mesh">
-      <div class="bg-orb w-[500px] h-[500px] bg-orange-600 top-[-10%] left-[-10%]"></div>
-      <div class="bg-orb w-[400px] h-[400px] bg-indigo-600 bottom-[-10%] right-[-10%] animation-delay-5000"></div>
-      <div class="bg-orb w-[300px] h-[300px] bg-rose-600 top-[40%] right-[10%] animation-delay-2000"></div>
+        <div class="bg-orb w-[500px] h-[500px] bg-orange-600 top-[-10%] left-[-10%]"></div>
+        <div class="bg-orb w-[600px] h-[600px] bg-indigo-900 bottom-[-10%] right-[-10%] animation-delay-5000"></div>
+        <div class="bg-orb w-[400px] h-[400px] bg-rose-900 top-[40%] right-[10%] animation-delay-2000"></div>
     </div>
+
     <div id="root"></div>
-  </body>
+
+    <script type="module" src="/index.tsx"></script>
+</body>
 </html>
