@@ -1,0 +1,8 @@
+{
+  "name": "Hot Potato Israel",
+  "description": "A social location-based game where users pass a digital hot potato across Israel. Join groups, scan QR codes, and avoid getting burned!",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
